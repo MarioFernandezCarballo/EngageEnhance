@@ -2,7 +2,7 @@ from datetime import timedelta
 import json
 from werkzeug.security import generate_password_hash, check_password_hash
 from urllib.request import urlopen
-from flask import Flask, Blueprint, make_response, redirect, url_for, request, flash, render_template, current_app
+from flask import Flask, Blueprint, make_response, redirect, url_for, request, flash, render_template, jsonify
 from flask_jwt_extended import create_access_token, JWTManager, set_access_cookies, unset_jwt_cookies
 from flask_login import login_user, login_required, logout_user, current_user
 from database import Product, User
@@ -41,6 +41,11 @@ def homeEndPoint():
 
     product = Product.query.filter_by(vendor='Paypal').first()
     return render_template('home_paypal.html', product=product, clientId=app.config['PAYPAL_ID'], title='Welcome', user=current_user if not current_user.is_anonymous else None)
+
+
+@app.route("/get_my_ip", methods=["GET"])
+def get_my_ip():
+      return jsonify(json.load(urlopen('http://ipinfo.io/' + request.remote_addr + '/json'))), 200
 
 
 @app.route('/success/<idPaypal>', methods=['GET'])
