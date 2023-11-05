@@ -320,3 +320,31 @@ form {
     background: rgba(255, 255, 255, 0.5);
     color: #000;
 }
+
+
+@media (max-width: 800px) {
+body {
+    width: -webkit-fill-available;
+}
+.nav-bg {
+    width: -webkit-fill-available;
+}
+  .navbar {
+    width: 100%;
+}
+
+  .navbar a {
+    padding: 10px 10px;
+    font-size: x-small;
+}
+.content {
+    width: -webkit-fill-available;
+}
+form {
+    width: -webkit-fill-available;
+    padding: 0px;
+}
+.form-input{
+            width: 90%;
+        }
+}
