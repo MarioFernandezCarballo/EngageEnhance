@@ -50,7 +50,7 @@ def createPlan(app, product, token):
     data = json.dumps({
         "product_id": product['id'],
         "name": "Engage Enhance",
-        "description": "Discover effortless social engagement with EngageEnhance. We transform your digital narrative through daily, high-impact carousel posts, avoiding the usual ad feel.",
+        "description": "Discover effortless social engagement with EngageEnhance.",
         "status": "ACTIVE",
         "billing_cycles": [
             {
