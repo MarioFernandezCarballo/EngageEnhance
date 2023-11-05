@@ -35,6 +35,7 @@ def createApp(app):
 
     app.config['RAZORPAY_ID'] = config['razorpay-id']
     app.config['RAZORPAY_SECRET'] = config['razorpay-secret']
+    app.config['RAZORPAY_PLAN_ID'] = config['razorpay-plan-id']
 
     trelloClient = TrelloClient(
         api_key=app.config["TRELLO_KEY"],
