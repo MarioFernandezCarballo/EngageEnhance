@@ -45,7 +45,7 @@ def homeEndPoint():
 
 @app.route("/get_my_ip", methods=["GET"])
 def get_my_ip():
-      return jsonify(json.load(urlopen('http://ipinfo.io/' + request.remote_addr + '/json'))), 200
+      return request.environ.get('HTTP_X_REAL_IP', request.remote_addr), 200
 
 
 @app.route('/success/<idPaypal>', methods=['GET'])
