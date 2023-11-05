@@ -1,0 +1,221 @@
+body {
+    font-family: Ubuntu;
+    background-color: #ddd;
+    color: #333;
+    margin: 0;
+}
+.nav-bg {
+    background-color: #333;
+}
+.navbar {
+    background-color: #333;
+    width: 700px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar a {
+    float: right;
+    display: block;
+    color: #ddd;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.navbar a:hover {
+    background-color: #555;
+}
+.logo {
+    float: left;
+    width: 100px;
+}
+.glass{
+    background: linear-gradient(45deg, transparent 0%, transparent 35%, rgba(255, 255, 255, 0.4) 50%, transparent 65%, transparent 100%); /* Set a semi-transparent white background */
+    border-radius: 10px; /* Add rounded corners for a glass effect */
+    backdrop-filter: blur(10px); /* Apply a blur effect */
+    border: 1px solid rgba(130, 130, 130, 0.3);
+    padding: 30px;
+}
+.content {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 50px;
+}
+.description{
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: start;
+}
+.how {
+    padding-left: 20px;
+}
+.login-link {
+    display: block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #0079BF;
+    font-weight: bold;
+}
+
+.rzp-button {
+    background: linear-gradient(to right, #2534ba, #4154f1 ); /* Metallic gradient */
+    color: #ddd; /* Set button text color to white */
+    padding: 10px 20px;
+    width: 250px;
+    height: 60px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 1s; /* Smooth transition */
+    position: relative;
+    font-size: larger;
+    font-family: Ubuntu;
+    box-shadow: 1px 1px 2px #aaa;
+}
+
+.rzp-button:hover {
+    background: linear-gradient(to end, #000, #222); /* Darker gradient on hover */
+}
+
+.rzp-button::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to top, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%); /* Shine effect */
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.rzp-button:hover::before {
+    opacity: 1;
+}
+.rzp-button::before {
+    position: absolute;
+    top: 0;
+    right: inherit;
+    bottom: inherit;
+    left: 0;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: linear-gradient(to top, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%);
+    background-image: linear-gradient(to left, #4154f1 , #2534ba, #4154f1 );
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    background-size: 220%;
+    border-radius: 30px;
+    }
+.paypal-button{
+      shape: 'pill';
+      color: 'gold';
+      layout: 'horizontal';
+      label: 'subscribe';
+      width: 250px;
+      height: 60px;
+      margin: auto;
+
+    border-radius: 30px;
+}
+
+
+form {
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px auto;
+            display: inline-block;
+            width: 400px;
+        }
+        input[type="text"],
+        input[type="password"], {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            font-family: Ubuntu;
+            font-size: larger;
+            background-color: #222;
+            color: #ddd;
+        }
+.submit-button {
+    background: linear-gradient(to right, #2534ba, #4154f1 ); /* Metallic gradient */
+    color: #ddd; /* Set button text color to white */
+    padding: 10px 20px;
+    margin-top: 20px;
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 1s; /* Smooth transition */
+    position: relative;
+    font-size: larger;
+    font-family: Ubuntu;
+    box-shadow: 1px 1px 2px #aaa;
+}
+
+.submit-button:hover {
+    background: linear-gradient(to end, #000, #222); /* Darker gradient on hover */
+}
+
+.submit-button::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(to top, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%); /* Shine effect */
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.submit-button:hover::before {
+    opacity: 1;
+}
+.submit-button::before {
+    position: absolute;
+    top: 0;
+    right: inherit;
+    bottom: inherit;
+    left: 0;
+    content: "";
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background: linear-gradient(to top, transparent 0%, rgba(255, 255, 255, 0.5) 50%, transparent 100%);
+    background-image: linear-gradient(to left, #4154f1 , #2534ba, #4154f1 );
+    -webkit-transition: all 0.25s ease-in-out;
+    transition: all 0.25s ease-in-out;
+    background-size: 220%;
+    border-radius: 30px;
+    }
+
+ ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.button-a {
+    text-decoration: none;
+    color: #ddd;
+}
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: rgba(255, 255, 255, 0.5);
+    color: #000;
+}

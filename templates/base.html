@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+    <link rel="stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles.css') }}">
+</head>
+<body>
+<div class="nav-bg">
+<div class="navbar">
+    <div class="logo">
+        <img src="{{ url_for('static',filename='logo-nobg.png') }}" alt="Logo" width="100">
+    </div>
+    {% if user %}
+        <div class="profile">
+            {% if goBack %}
+            <a href="/dashboard"><h2>Go back</h2></a>
+            {% else %}
+            <a href="/subscription"><h2>My Subscription</h2></a>
+            <a href="/profile"><h2>Profile</h2></a>
+            {% endif %}
+        </div>
+    {% else %}
+        <div class="profile-dropdown">
+            <a href="/login"><h2>Login</h2></a>
+        </div>
+    {% endif %}
+</div>
+    </div>
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

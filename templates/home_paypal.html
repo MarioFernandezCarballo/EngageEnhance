@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="content glass wow animate__animated animate__fadeIn">
+    <h1>Welcome to Engage Enhance</h1>
+    <div class="content">
+        <h3>Start your subscription</h3>
+        <div class="paypal-button" id="paypal-button-container"></div>
+    </div>
+    <div class="content description">
+        <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4>
+    </div>
+</div>
+<script src="https://www.paypal.com/sdk/js?client-id={{ clientId }}&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+<script>
+  paypal.Buttons({
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          plan_id: '{{product.planId}}'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID);
+        window.location.href = '/success/' + data.subscriptionID
+      }
+  }).render('#paypal-button-container');
+</script>
+{% endblock %}
+
+

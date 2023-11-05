@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="content glass wow animate__animated animate__fadeIn">
+    <h1>Welcome to Engage Enhance</h1>
+    <div class="content">
+        <h3>Start your subscription</h3>
+        <button id="rzp-button" class="rzp-button wow animate__animated animate__bounceIn" data-wow-duration="1s" data-wow-delay="0.5s">Start</button>
+    </div>
+</div>
+<div class="content description">
+    <h4>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h4>
+</div>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+    var options = {
+       "key": "{{ razorpayKey }}",
+       "subscription_id": "{{ product.planId }}",
+       "name": "My Billing Label",
+       "description": "Auth txn for " + '{{ product.planId }}',
+       "handler": function (response){
+         alert(response.razorpay_payment_id);
+         window.location.href = '/success/' + response.razorpay_payment_id
+       }
+     };
+     var rzp1 = new Razorpay(options);
+     document.getElementById('rzp-button').onclick = function(e){
+       rzp1.open();
+     }
+  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.3.0/wow.min.js"></script>
+
+<script>
+  // Initialize wow.js
+  new WOW().init();
+</script>
+{% endblock %}
+
+
