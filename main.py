@@ -31,13 +31,12 @@ def refreshToken(jwt_header, jwt_data):
 
 @app.route('/', methods=['GET'])
 def homeEndPoint():
-    d = json.load(urlopen('http://ipinfo.io/' + request.remote_addr + '/json'))
+    ip = request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
+    d = json.load(urlopen('http://ipinfo.io/' + ip + '/json'))
     if 'country' in d.keys():
         if d['country'] == 'IN':
             product = Product.query.filter_by(vendor='Razorpay').first()
             return render_template('home_razor.html', product=product, razorpayKey=app.config['RAZORPAY_ID'], title='Welcome', user=current_user if not current_user.is_anonymous else None)
-    #product = Product.query.filter_by(vendor='Razorpay').first()
-    #return render_template('home_razor.html', product=product, razorpayKey=app.config['RAZORPAY_ID'], user=current_user if not current_user.is_anonymous else None)
 
     product = Product.query.filter_by(vendor='Paypal').first()
     return render_template('home_paypal.html', product=product, clientId=app.config['PAYPAL_ID'], title='Welcome', user=current_user if not current_user.is_anonymous else None)
