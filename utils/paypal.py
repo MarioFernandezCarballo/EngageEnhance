@@ -32,8 +32,6 @@ def createProduct(app):
         "description": "Insightful Posts, Impactful Presence.",
         "type": "SERVICE",
         "category": "SOFTWARE",
-        "image_url": "",
-        "home_url": ""
     })
     response = requests.post(url, headers=headers, data=data)
     product = json.loads(response.text)
