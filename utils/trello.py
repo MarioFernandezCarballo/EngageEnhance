@@ -9,7 +9,6 @@ def createTrelloBoards(user):
     board = current_app.config['trelloClient'].add_board(
         board_name=user.username + " board",
         default_lists=False,
-        prefs_background='grey'# current_app.config['TRELLO_BG_ID']
     )
     list1 = board.add_list(name='In progress', pos='bottom')
     time_24_hours_later = datetime.datetime.utcnow() + datetime.timedelta(hours=24)
