@@ -37,6 +37,8 @@ def homeEndPoint():
         if d['country'] == 'IN':
             product = Product.query.filter_by(vendor='Razorpay').first()
             return render_template('home_razor.html', product=product, razorpayKey=app.config['RAZORPAY_ID'], title='Welcome', user=current_user if not current_user.is_anonymous else None)
+    #product = Product.query.filter_by(vendor='Razorpay').first()
+    #return render_template('home_razor.html', product=product, razorpayKey=app.config['RAZORPAY_ID'], user=current_user if not current_user.is_anonymous else None)
 
     product = Product.query.filter_by(vendor='Paypal').first()
     return render_template('home_paypal.html', product=product, clientId=app.config['PAYPAL_ID'], title='Welcome', user=current_user if not current_user.is_anonymous else None)
